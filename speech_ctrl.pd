@@ -1,0 +1,27 @@
+#N canvas 0 22 450 300 12;
+#X obj 126 120 tabplay~ ded;
+#X obj 189 189 *~;
+#X obj 217 167 line~;
+#X msg 277 140 0 100;
+#X obj 61 190 env~ 16384;
+#X floatatom 61 212 5 0 0 0 - - -;
+#X msg 217 145 1 100;
+#X obj 189 211 hip~ 5;
+#X msg 20 84 10000 40000;
+#X text 22 25 SPEECH ctrl;
+#X obj 175 50 inlet;
+#X text 169 29 out of speech_syllables;
+#X obj 148 249 outlet~;
+#X text 146 271 to dac~;
+#X obj 189 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 4 0;
+#X connect 0 0 12 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 8 0 0 0;
+#X connect 10 0 0 0;
+#X connect 10 0 14 0;

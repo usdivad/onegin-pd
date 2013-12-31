@@ -1,0 +1,47 @@
+#N canvas 105 22 1244 851 12;
+#X obj 213 78 adc~;
+#X obj 415 50 readsf~;
+#X obj 328 50 soundfiler;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array ded 2.2825e+06 float 2;
+#X coords 0 1 2.2825e+06 -1 200 140 1;
+#X restore 328 142 graph;
+#X obj 207 374 *~ 1;
+#X obj 208 422 dac~;
+#X obj 48 -38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 66 -40 GLOB ON(some);
+#X msg 294 12 read -resize ./dedication.wav ded;
+#X text 291 -14 SPEECH init;
+#X text 214 311 audio on/off;
+#X text 27 506 TODO: by frequency BD/SN/HH do a synth iterate across
+freqs;
+#X text 30 534 THINGS: do prev sylEnd -> new sylStart the smart way
+\; ctrlflow consts e.g. resize val in moses? abstractions;
+#X text 28 593 DEPENDENCIES: ms_to_samples.pd \, dp.txt \, dedication.wav
+;
+#X obj -31 195 speech_syllables;
+#X obj 328 75 / 1000;
+#X floatatom 328 100 5 0 0 0 - - -;
+#X obj 95 123 input_detect;
+#X obj 142 160 synth;
+#X obj -31 245 speech_ctrl;
+#X obj 237 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 127 197 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786
+-1 -1;
+#X connect 0 0 17 1;
+#X connect 2 0 15 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 6 0 8 0;
+#X connect 6 0 14 0;
+#X connect 6 0 17 0;
+#X connect 8 0 2 0;
+#X connect 14 0 19 0;
+#X connect 15 0 16 0;
+#X connect 17 0 14 1;
+#X connect 17 0 18 0;
+#X connect 17 0 21 0;
+#X connect 19 0 4 0;
+#X connect 20 0 4 1;
