@@ -3,7 +3,7 @@
 #X obj 708 110 adc~ 3;
 #X obj 871 113 adc~ 4;
 #X text 258 55 KICK;
-#X text 438 56 SNARE;
+#X text 486 55 SNARE;
 #X text 707 50 OVER57;
 #X text 869 52 ZOOM;
 #X obj 258 141 bonk~;
@@ -25,16 +25,29 @@
 #X obj 247 224 - 30;
 #X obj 485 496 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 449 140 bonk~;
-#X obj 440 174 unpack 0 0 0;
-#X floatatom 440 199 5 0 0 0 - - -;
-#X floatatom 491 199 5 0 0 0 - - -;
-#X floatatom 540 200 5 0 0 0 - - -;
-#X obj 491 246 print;
-#X obj 437 255 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 438 223 - 30;
-#X obj 450 116 adc~ 2;
-#X msg 491 221 snare: \$1;
+#X obj 497 139 bonk~;
+#X obj 488 173 unpack 0 0 0;
+#X floatatom 488 198 5 0 0 0 - - -;
+#X floatatom 539 198 5 0 0 0 - - -;
+#X floatatom 588 199 5 0 0 0 - - -;
+#X obj 539 245 print;
+#X obj 485 254 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 486 222 - 30;
+#X obj 498 115 adc~ 2;
+#X msg 539 220 snare: \$1;
+#X obj 592 245 moses 30;
+#X floatatom 653 272 5 0 0 0 - - -;
+#X obj 350 247 moses 30;
+#X floatatom 409 276 5 0 0 0 - - -;
+#X obj 403 331 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 665 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 986 653 dac~;
+#X obj 962 501 delwrite~ del 100;
+#X obj 945 584 delread~ del 33;
+#X obj 1007 539 *~ 0.95;
+#X text 971 472 delays;
 #X connect 0 0 7 0;
 #X connect 1 0 8 0;
 #X connect 2 0 10 0;
@@ -46,6 +59,7 @@
 #X connect 14 2 17 0;
 #X connect 16 0 18 0;
 #X connect 16 0 21 0;
+#X connect 16 0 35 0;
 #X connect 18 0 19 0;
 #X connect 21 0 20 0;
 #X connect 23 1 24 0;
@@ -54,6 +68,15 @@
 #X connect 24 2 27 0;
 #X connect 26 0 32 0;
 #X connect 26 0 30 0;
+#X connect 26 0 33 0;
 #X connect 30 0 29 0;
 #X connect 31 0 23 0;
 #X connect 32 0 28 0;
+#X connect 33 1 34 0;
+#X connect 33 1 38 0;
+#X connect 35 1 36 0;
+#X connect 35 1 37 0;
+#X connect 41 0 39 0;
+#X connect 41 0 39 1;
+#X connect 41 0 42 0;
+#X connect 42 0 40 0;
