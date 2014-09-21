@@ -1,0 +1,29 @@
+#N canvas 556 116 828 445 12;
+#X obj 189 215 gemwin;
+#X msg 194 187 destroy;
+#X obj 413 117 gemhead;
+#X msg 94 155 reset \, dimen 640 480 \, create \, 1;
+#X obj 411 151 color 1 0 0;
+#X obj 646 38 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 645 176 5 0 0 0 - - -;
+#X obj 587 91 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 200 1;
+#X floatatom 544 89 5 0 0 0 - - -;
+#X text 94 126 init;
+#X text 412 83 square obj;
+#X obj 395 306 rectangle 0.25 0.25;
+#X obj 391 180 translate 1 0 1 0;
+#X obj 393 208 translate 1 1 0 0;
+#X obj 97 12 loadbang;
+#X obj 87 62 v snake_size;
+#X connect 1 0 0 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 12 0;
+#X connect 5 0 6 0;
+#X connect 5 0 12 1;
+#X connect 7 0 8 0;
+#X connect 7 0 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
