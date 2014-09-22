@@ -5,19 +5,17 @@
 #X obj 135 344 dac~;
 #X obj 120 94 delwrite~ del 1000;
 #X obj 43 119 vsl 15 128 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4300 1;
+-1 -1 1300 1;
 #X floatatom 40 268 5 0 0 0 - - -;
 #X obj 325 102 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 12500 1;
 #X floatatom 325 238 5 0 0 0 - - -;
 #X text 323 80 feedback;
 #X text 195 149;
-#X text 20 91 delay ms;
 #X floatatom 454 218 5 0 0 0 - - -;
 #X obj 454 193 line 1 100;
 #X msg 528 138 set \$1;
 #X msg 458 146 0 5000;
-#X text 457 96 fadeout;
 #X obj 460 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom -32 326 5 0 0 0 - - -;
@@ -26,6 +24,9 @@
 #X msg -102 228 0.5;
 #X msg -63 226 2;
 #X text 129 65 DELAYS;
+#X text -114 202 time multiply;
+#X text 20 91 time ms;
+#X text 457 96 feedback fadeout;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
@@ -33,16 +34,16 @@
 #X connect 2 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 0 0;
-#X connect 6 0 20 1;
+#X connect 6 0 18 1;
 #X connect 7 0 8 0;
 #X connect 8 0 1 1;
-#X connect 8 0 14 0;
-#X connect 12 0 1 1;
+#X connect 8 0 13 0;
+#X connect 11 0 1 1;
+#X connect 12 0 11 0;
 #X connect 13 0 12 0;
-#X connect 14 0 13 0;
-#X connect 15 0 13 0;
-#X connect 17 0 15 0;
-#X connect 18 0 6 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 0;
+#X connect 16 0 6 0;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
 #X connect 20 0 18 0;
-#X connect 21 0 20 0;
-#X connect 22 0 20 0;
