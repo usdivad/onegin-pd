@@ -5,13 +5,13 @@
 #X obj 135 344 dac~;
 #X obj 120 94 delwrite~ del 1000;
 #X obj 43 119 vsl 15 128 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1300 1;
+-1 -1 5588 1;
 #X floatatom 40 268 5 0 0 0 - - -;
 #X obj 325 102 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12500 1;
+-1 -1 12700 1;
 #X floatatom 325 238 5 0 0 0 - - -;
 #X text 323 80 feedback;
-#X text 195 149;
+#X text 195 149 comment;
 #X floatatom 454 218 5 0 0 0 - - -;
 #X obj 454 193 line 1 100;
 #X msg 528 138 set \$1;
@@ -27,6 +27,13 @@
 #X text -114 202 time multiply;
 #X text 20 91 time ms;
 #X text 457 96 feedback fadeout;
+#X obj 4 367 metro;
+#X obj 22 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -56 11 loadbang;
+#X msg -60 56 440;
+#X msg 22 53 0.75;
+#X msg 22 15 \; pd dsp 1;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
@@ -35,6 +42,7 @@
 #X connect 5 0 6 0;
 #X connect 6 0 0 0;
 #X connect 6 0 18 1;
+#X connect 6 0 25 1;
 #X connect 7 0 8 0;
 #X connect 8 0 1 1;
 #X connect 8 0 13 0;
@@ -47,3 +55,10 @@
 #X connect 18 0 16 0;
 #X connect 19 0 18 0;
 #X connect 20 0 18 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 27 0 30 0;
+#X connect 27 0 25 0;
+#X connect 28 0 5 0;
+#X connect 29 0 7 0;
