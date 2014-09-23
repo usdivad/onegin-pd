@@ -117,7 +117,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             myId = instanceNumber++,
             growthIncr = 5,
             moveQueue = [], // a queue that holds the next moves of the snake
-            currentDirection = 1, // 0: up, 1: left, 2: down, 3: right
+            currentDirection = 0, // 0: up, 1: left, 2: down, 3: right
             columnShift = [0, 1, 0, -1],
             rowShift = [-1, 0, 1, 0],
             xPosShift = [],
@@ -192,31 +192,50 @@ SNAKE.Snake = SNAKE.Snake || (function() {
                     2
         */
         me.handleArrowKeys = function(keyNum) {
-            if (isDead) {return;}
+            if (isDead) {
+                // var mv = Math.floor(Math.random()*4); //random direction to start
+                // console.log(mv);
+                // moveQueue.unshift(mv);
+                currentDirection = 0;
+                return;
+            }
             
             var snakeLength = me.snakeLength;
             var lastMove = moveQueue[0] || currentDirection;
+            console.log(lastMove);
 
             switch (keyNum) {
                 case 37:
-                    if ( lastMove !== 1 || snakeLength === 1 ) {
-                        moveQueue.unshift(3); //SnakeDirection = 3;
+                    // if ( lastMove !== 1 || snakeLength === 1 ) {
+                    //     moveQueue.unshift(3); //SnakeDirection = 3;
+                    // }
+                    if (lastMove == 0) {
+                        moveQueue.unshift(3);
+                    }
+                    else {
+                        moveQueue.unshift(lastMove-1);
                     }
                     break;    
                 case 38:
-                    if ( lastMove !== 2 || snakeLength === 1 ) {
-                        moveQueue.unshift(0);//SnakeDirection = 0;
-                    }
+                    // if ( lastMove !== 2 || snakeLength === 1 ) {
+                    //     moveQueue.unshift(0);//SnakeDirection = 0;
+                    // }
                     break;    
                 case 39:
-                    if ( lastMove !== 3 || snakeLength === 1 ) {
-                        moveQueue.unshift(1); //SnakeDirection = 1;
+                    // if ( lastMove !== 3 || snakeLength === 1 ) {
+                    //     moveQueue.unshift(1); //SnakeDirection = 1;
+                    // }
+                    if (lastMove == 3) {
+                        moveQueue.unshift(0);
+                    }
+                    else {
+                        moveQueue.unshift(lastMove+1);
                     }
                     break;    
                 case 40:
-                    if ( lastMove !== 0 || snakeLength === 1 ) {
-                        moveQueue.unshift(2);//SnakeDirection = 2;
-                    }
+                    // if ( lastMove !== 0 || snakeLength === 1 ) {
+                    //     moveQueue.unshift(2);//SnakeDirection = 2;
+                    // }
                     break;  
             }
         };
@@ -311,6 +330,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             isDead = true;
             playingBoard.handleDeath();
             moveQueue.length = 0;
+            console.log(moveQueue);
         };
 
         /**
@@ -682,6 +702,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             // tmpElm.appendChild(tryAgainTxt);
             tmpElm.appendChild(tryAgainStart);
 
+            // moveQueue = [];
             return tmpElm;
         }
         
