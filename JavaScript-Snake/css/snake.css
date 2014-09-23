@@ -23,9 +23,9 @@ a.snake-link:hover {
   color: #FfFf54; 
 }
 
-/*button {
-    background-color: blue;
-}*/
+button {
+    display: none;
+}
 
 
 .snake-panel-component {

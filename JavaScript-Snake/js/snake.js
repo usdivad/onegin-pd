@@ -638,7 +638,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             var kbShortcut = function(evt) {
                 if (!evt) var evt = window.event;
                 var keyNum = (evt.which) ? evt.which : evt.keyCode;
-                if (keyNum === 32 || keyNum === 13) {
+                if (keyNum === 32 || keyNum === 13 || (keyNum >= 37 && keyNum <= 40) ) {
                     loadGame();
                 }
             };
@@ -647,6 +647,7 @@ SNAKE.Board = SNAKE.Board || (function() {
             
             tmpElm.appendChild(welcomeTxt);
             tmpElm.appendChild(welcomeStart);
+            loadGame();
             return tmpElm;
         }
         
@@ -655,8 +656,8 @@ SNAKE.Board = SNAKE.Board || (function() {
             tmpElm.id = "sbTryAgain" + myId;
             tmpElm.className = "snake-try-again-dialog";
             
-            var tryAgainTxt = document.createElement("div");
-            tryAgainTxt.innerHTML = "JavaScript Snake<p></p>You died :(.<p></p>";
+            // var tryAgainTxt = document.createElement("div");
+            // tryAgainTxt.innerHTML = "JavaScript Snake<p></p>You died :(.<p></p>";
             var tryAgainStart = document.createElement("button");
             tryAgainStart.appendChild( document.createTextNode("Play Again?"));
             
@@ -671,15 +672,16 @@ SNAKE.Board = SNAKE.Board || (function() {
                 if (boardState !== 0 || tmpElm.style.display !== "block") {return;}
                 if (!evt) var evt = window.event;
                 var keyNum = (evt.which) ? evt.which : evt.keyCode;
-                if (keyNum === 32 || keyNum === 13) {
+                if (keyNum === 32 || keyNum === 13 || (keyNum >= 37 && keyNum <= 40)) {
                     reloadGame();
                 }
             };
             SNAKE.addEventListener(window, "keyup", kbTryAgainShortcut, true);
             
             SNAKE.addEventListener(tryAgainStart, "click", reloadGame, false);
-            tmpElm.appendChild(tryAgainTxt);
+            // tmpElm.appendChild(tryAgainTxt);
             tmpElm.appendChild(tryAgainStart);
+
             return tmpElm;
         }
         
