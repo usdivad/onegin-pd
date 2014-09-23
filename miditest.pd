@@ -1,8 +1,18 @@
 #N canvas 856 205 450 300 12;
-#X obj 130 51 adc~;
-#X obj 130 76 sigmund~ notes;
-#X floatatom 130 101 5 0 0 0 - - -;
-#X obj 130 123 moses 59;
+#X obj 63 41 adc~;
+#X obj 63 66 sigmund~ notes;
+#X floatatom 63 91 5 0 0 0 - - -;
+#X obj 63 113 moses 59;
+#X text -185 14 using: - midistroke - new IAC driver "For midistroke
+snake";
+#X obj 47 231 noteout;
+#X obj -218 140 makenote 64 250;
+#X msg 27 137 1 100 1;
+#X msg 111 139 2 100 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 3 1 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
