@@ -23,8 +23,13 @@ a.snake-link:hover {
   color: #FfFf54; 
 }
 
+/*button {
+    background-color: blue;
+}*/
+
 
 .snake-panel-component {
+    visibility: hidden;
     position: absolute;
     font-family: Verdana, arial, helvetica, sans-serif; 
     font-size: 14px;
@@ -38,23 +43,27 @@ a.snake-link:hover {
 .snake-snakebody-block {
     margin: 0px;
     padding: 0px;
-    background-color: #FF0000;
+    /*background-color: #FF0000;*/
+    background-color: white;
     position: absolute;
     border: 0px solid #000080;
     background-repeat: no-repeat;
 }
 
 .snake-snakebody-alive {
-   background-image: url('./images/snakeblock.png');
+   /*background-image: url('./images/snakeblock.png');*/
+   background-color: white;
 }
 .snake-snakebody-dead {
-   background-image: url('./images/deadblock.png');
+   /*background-image: url('./images/deadblock.png');*/
+   background-color: white;
 }
 
 .snake-food-block {
     margin: 0px;
     padding: 0px;
-    background-color: #FF0000;
+    /*background-color: #FF0000;*/
+    background-color: white;
     border: 0px solid #000080;
     position: absolute;
 }
@@ -63,8 +72,9 @@ a.snake-link:hover {
     margin: 0px;
     padding: 0px;
     position: absolute;
-    background-color: #0000A8;
-    border: 0px solid #0000A8;
+    /*background-color: #0000A8;*/
+    background-color: black;
+    /*border: 0px solid #0000A8;*/
 }
 
 .snake-game-container {
@@ -73,7 +83,8 @@ a.snake-link:hover {
     border-width: 0px;
     border-style: none;
     zoom: 1;
-    background-color: #FC5454;
+    /*background-color: #FC5454;*/
+    background-color: white;
     position: relative;
 }
             
