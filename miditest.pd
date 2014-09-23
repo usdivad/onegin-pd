@@ -7,12 +7,18 @@
 snake";
 #X obj 47 231 noteout;
 #X obj -218 140 makenote 64 250;
-#X msg 27 137 1 100 1;
-#X msg 111 139 2 100 1;
+#X msg 27 160 1 100 1;
+#X msg 111 163 2 100 1;
+#X obj 40 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 122 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 7 0;
-#X connect 3 1 8 0;
+#X connect 3 0 9 0;
+#X connect 3 1 10 0;
 #X connect 7 0 5 0;
 #X connect 8 0 5 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
