@@ -361,7 +361,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             me.snakeHead.next = me.snakeHead;
             me.snakeHead.prev = me.snakeHead;
             me.snakeTail = me.snakeHead;
-            me.snakeLength = 1;
+            me.snakeLength = 5;
             
             for (var ii = 0; ii < blocks.length; ii++) {
                 blocks[ii].elm.style.left = "-1000px";
@@ -379,6 +379,8 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             me.snakeHead.yPos = me.snakeHead.col * playingBoard.getBlockHeight();
             me.snakeHead.elm.style.left = me.snakeHead.xPos + "px";
             me.snakeHead.elm.style.top = me.snakeHead.yPos + "px";
+
+            me.eatFood();
         };
         
         // ---------------------------------------------------------------------

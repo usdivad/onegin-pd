@@ -25,7 +25,7 @@
 #X obj 146 370 square 0.25;
 #X obj 152 343 translate 1 0 0 0;
 #X floatatom 677 261 5 0 0 0 - - -;
-#X obj 785 206 metro 500;
+#X obj 803 213 metro 500;
 #X obj 775 354 - 1;
 #X msg 120 174 0;
 #X obj 119 206 v snake_x;
@@ -38,6 +38,7 @@
 #X obj 765 384 t b f;
 #X obj 657 468 select 1;
 #X obj 660 422 == 1;
+#X obj 23 315 v snake_dir;
 #X connect 1 0 0 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
@@ -51,6 +52,7 @@
 #X connect 16 0 3 0;
 #X connect 16 0 15 0;
 #X connect 16 0 25 0;
+#X connect 16 0 23 0;
 #X connect 18 0 19 0;
 #X connect 19 0 21 0;
 #X connect 21 0 20 0;
